@@ -25,13 +25,13 @@ CrewAI, döngüde insan iş akışlarını uygulamak için iki temel yaklaşım 
 
     Görevinizi insan girdisi etkin olacak şekilde ayarlayın:
 
-    ![Crew Human Input](https://mintcdn.com/crewai/5SZbe87tsCWZY09V/images/enterprise/crew-human-input.png)
+    ![Crew Human Input](img/crew-human-input.png)
 
 2. **Webhook URL'si Sağlayın**
 
     Ekibinizi başlatırken insan girdisi için bir webhook URL'si ekleyin:
 
-    ![Crew Webhook URL](https://mintcdn.com/crewai/5SZbe87tsCWZY09V/images/enterprise/crew-webhook-url.png)
+    ![Crew Webhook URL](img/crew-webhook-url.png)
 
     Bearer kimlik doğrulamasıyla örnek:
 
@@ -90,7 +90,7 @@ CrewAI, döngüde insan iş akışlarını uygulamak için iki temel yaklaşım 
 
     Ekibinizin devam uç noktasını aşağıdaki bilgilerle çağırın:
 
-    ![Crew Resume Endpoint](https://mintcdn.com/crewai/5SZbe87tsCWZY09V/images/enterprise/crew-resume-endpoint.png)
+    ![Crew Resume Endpoint](img/crew-resume-endpoint.png)
 
     > **Uyarı — Kritik: Webhook URL'leri Yeniden Sağlanmalıdır:**
     > Devam çağrısında başlatma çağrısında kullandığınız webhook URL'lerini (`taskWebhookUrl`, `stepWebhookUrl`, `crewWebhookUrl`) **mutlaka** yeniden sağlamanız gerekmektedir. Webhook yapılandırmaları başlatmadan devama **otomatik olarak aktarılmaz** — görev tamamlama, ajan adımları ve ekip tamamlama için bildirim almaya devam edebilmek amacıyla bunların devam isteğine açıkça dahil edilmesi gerekir.

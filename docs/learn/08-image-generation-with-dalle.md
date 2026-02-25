@@ -56,7 +56,7 @@ backstory: >
 
 DALL-E aracına sahip ajan, görseli oluşturabilecek ve yanıtında bir URL sunacaktır. Ardından görseli indirebilirsiniz.
 
-![DALL-E Görseli](https://mintcdn.com/crewai/5SZbe87tsCWZY09V/images/enterprise/dall-e-image.png)
+![DALL-E Görseli](img/dall-e-image.png)
 
 ## En İyi Uygulamalar
 
