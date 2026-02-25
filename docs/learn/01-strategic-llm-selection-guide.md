@@ -466,7 +466,7 @@ crew = Crew(agents=[...], tasks=[...], llm=LLM(model="gpt-4o-mini"))
 
 LLM seçimlerini optimize etme konusunda ciddi olan ekipler için **CrewAI AMP platformu**, temel CLI testinin çok ötesine geçen sofistike test yetenekleri sunar.
 
-![Enterprise Testing Interface](https://mintcdn.com/crewai/5SZbe87tsCWZY09V/images/enterprise/enterprise-testing.png)
+![Enterprise Testing Interface](img/enterprise-testing.png)
 
 **Gelişmiş Test Özellikleri:**
 
