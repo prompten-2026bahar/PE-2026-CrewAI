@@ -1,8 +1,4 @@
-﻿> ## Dokümantasyon Dizini
-> Tam dokümantasyon dizinine şu adresten ulaşabilirsiniz: https://docs.crewai.com/llms.txt
-> Daha fazla keşfetmeden önce mevcut tüm sayfaları bulmak için bu dosyayı kullanın.
-
-# Özel Yönetici Ajan
+﻿# Özel Yönetici Ajan
 
 > CrewAI'de özel bir ajanı yönetici olarak nasıl atayacağınızı ve görev yönetimi ile koordinasyon üzerinde daha fazla kontrol sahibi olacağınızı öğrenin.
 

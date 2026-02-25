@@ -1,8 +1,4 @@
-﻿> ## Dokümantasyon İndeksi
-> Tüm dokümantasyon indeksine şu adresten ulaşabilirsiniz: https://docs.crewai.com/llms.txt
-> Daha fazla keşfetmeden önce mevcut tüm sayfaları öğrenmek için bu dosyayı kullanın.
-
-# LLM Çağrı Hook'ları (LLM Call Hooks)
+﻿# LLM Çağrı Hook'ları (LLM Call Hooks)
 
 > CrewAI'da dil modeli etkileşimlerini yakalamayı, değiştirmeyi ve kontrol etmeyi öğrenin.
 

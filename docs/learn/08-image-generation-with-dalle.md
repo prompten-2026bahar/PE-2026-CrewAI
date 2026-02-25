@@ -1,8 +1,4 @@
-﻿> ## Dokümantasyon Dizini
-> Tam dokümantasyon dizinine şu adresten ulaşabilirsiniz: https://docs.crewai.com/llms.txt
-> Daha fazla keşfetmeden önce mevcut tüm sayfaları bulmak için bu dosyayı kullanın.
-
-# DALL-E ile Görsel Üretimi
+﻿# DALL-E ile Görsel Üretimi
 
 > CrewAI projelerinizde yapay zeka destekli görsel üretimi için DALL-E'yi nasıl kullanacağınızı öğrenin
 

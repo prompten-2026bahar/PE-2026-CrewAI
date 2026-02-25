@@ -1,8 +1,4 @@
-﻿> ## Dokümantasyon Dizini
-> Tam dokümantasyon dizinine şu adresten ulaşabilirsiniz: https://docs.crewai.com/llms.txt
-> Daha fazla keşfetmeden önce mevcut tüm sayfaları bulmak için bu dosyayı kullanın.
-
-# Özel Araçlar Oluşturma
+﻿# Özel Araçlar Oluşturma
 
 > CrewAI çerçevesi içinde özel araçlar oluşturma, kullanma ve yönetme konusunda yeni işlevler ve hata yönetimi dahil kapsamlı kılavuz.
 

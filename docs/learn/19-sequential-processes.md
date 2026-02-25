@@ -1,8 +1,4 @@
-﻿> ## Dokümantasyon İndeksi
-> Tüm dokümantasyon indeksine şu adresten ulaşabilirsiniz: https://docs.crewai.com/llms.txt
-> Daha fazla keşfetmeden önce mevcut tüm sayfaları öğrenmek için bu dosyayı kullanın.
-
-# Ardışık Süreçler (Sequential Processes)
+﻿# Ardışık Süreçler (Sequential Processes)
 
 > CrewAI projelerinde görev yürütme için ardışık süreçlerin kullanılmasına yönelik kapsamlı bir rehber.
 

@@ -1,8 +1,4 @@
-﻿> ## Dokümantasyon Dizini
-> Tam dokümantasyon dizinine şu adresten ulaşabilirsiniz: https://docs.crewai.com/llms.txt
-> Daha fazla keşfetmeden önce mevcut tüm sayfaları bulmak için bu dosyayı kullanın.
-
-# Çok Modlu Ajanları Kullanma
+﻿# Çok Modlu Ajanları Kullanma
 
 > CrewAI çerçevesinde görsel ve diğer metin dışı içerikleri işlemek için ajanlarınızda çok modlu yetenekleri nasıl etkinleştireceğinizi ve kullanacağınızı öğrenin.
 

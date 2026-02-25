@@ -1,8 +1,4 @@
-﻿> ## Dokümantasyon Dizini
-> Tam dokümantasyon dizinine şu adresten ulaşabilirsiniz: https://docs.crewai.com/llms.txt
-> Daha fazla keşfetmeden önce mevcut tüm sayfaları bulmak için bu dosyayı kullanın.
-
-# Kodlama Ajanları
+﻿# Kodlama Ajanları
 
 > CrewAI Ajanlarınızın kod yazıp çalıştırmasını nasıl etkinleştireceğinizi ve gelişmiş işlevler için ek özellikleri nasıl kullanacağınızı öğrenin.
 

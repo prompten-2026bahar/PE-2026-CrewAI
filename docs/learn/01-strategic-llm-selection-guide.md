@@ -1,8 +1,4 @@
-﻿> ## Dokümantasyon Dizini
-> Tam dokümantasyon dizinine şu adresten ulaşabilirsiniz: https://docs.crewai.com/llms.txt
-> Daha fazla keşfetmeden önce mevcut tüm sayfaları bulmak için bu dosyayı kullanın.
-
-# Stratejik LLM Seçim Kılavuzu
+﻿# Stratejik LLM Seçim Kılavuzu
 
 > CrewAI yapay zeka ajanlarınız için doğru LLM'yi seçmeye ve etkili görev ile ajan tanımları yazmaya yönelik stratejik çerçeve
 

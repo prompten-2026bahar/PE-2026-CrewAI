@@ -1,8 +1,4 @@
-﻿> ## Dokümantasyon İndeksi
-> Tüm dokümantasyon indeksine şu adresten ulaşabilirsiniz: https://docs.crewai.com/llms.txt
-> Daha fazla keşfetmeden önce mevcut tüm sayfaları öğrenmek için bu dosyayı kullanın.
-
-# En Son Crew Kickoff'undan Görevleri Yeniden Başlatma
+﻿# En Son Crew Kickoff'undan Görevleri Yeniden Başlatma
 
 > En son `crew.kickoff(...)` çağrısından görevleri yeniden başlatın.
 

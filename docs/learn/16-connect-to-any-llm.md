@@ -1,8 +1,4 @@
-﻿> ## Dokümantasyon Dizini
-> Tam dokümantasyon dizinine şu adresten ulaşabilirsiniz: https://docs.crewai.com/llms.txt
-> Daha fazla keşfetmeden önce mevcut tüm sayfaları bulmak için bu dosyayı kullanın.
-
-# Herhangi Bir LLM'e Bağlanma
+﻿# Herhangi Bir LLM'e Bağlanma
 
 > Desteklenen sağlayıcılar ve yapılandırma seçenekleri dahil olmak üzere LiteLLM kullanarak CrewAI'yi çeşitli Büyük Dil Modelleriyle (LLM) entegre etmeye yönelik kapsamlı kılavuz.
 

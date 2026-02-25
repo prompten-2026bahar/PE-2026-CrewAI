@@ -1,8 +1,4 @@
-﻿> ## Dokümantasyon İndeksi
-> Tüm dokümantasyon indeksine şu adresten ulaşabilirsiniz: https://docs.crewai.com/llms.txt
-> Daha fazla keşfetmeden önce mevcut tüm sayfaları öğrenmek için bu dosyayı kullanın.
-
-# Araç Çağrı Hook'ları (Tool Call Hooks)
+﻿# Araç Çağrı Hook'ları (Tool Call Hooks)
 
 > CrewAI'da araç yürütmesini yakalamayı, değiştirmeyi ve kontrol etmeyi öğrenin.
 

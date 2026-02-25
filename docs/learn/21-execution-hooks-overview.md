@@ -1,8 +1,4 @@
-﻿> ## Dokümantasyon İndeksi
-> Tüm dokümantasyon indeksine şu adresten ulaşabilirsiniz: https://docs.crewai.com/llms.txt
-> Daha fazla keşfetmeden önce mevcut tüm sayfaları öğrenmek için bu dosyayı kullanın.
-
-# Çalışma Hook'larına (Execution Hooks) Genel Bakış
+﻿# Çalışma Hook'larına (Execution Hooks) Genel Bakış
 
 > Temsilci işlemleri üzerinde ince ayarlı kontrol için CrewAI'daki çalışma hook'larını anlama ve kullanma
 

@@ -1,8 +1,4 @@
-﻿> ## Dokümantasyon Dizini
-> Tam dokümantasyon dizinine şu adresten ulaşabilirsiniz: https://docs.crewai.com/llms.txt
-> Daha fazla keşfetmeden önce mevcut tüm sayfaları bulmak için bu dosyayı kullanın.
-
-# Ajanları Özelleştirme
+﻿# Ajanları Özelleştirme
 
 > CrewAI çerçevesinde ajanları belirli roller, görevler ve gelişmiş özelleştirmeler için uyarlamaya yönelik kapsamlı kılavuz.
 
