@@ -5,14 +5,7 @@ CrewAI ile başlayın - Kurulum yapın, yapılandırın ve ilk yapay zeka ekibin
 
 Kurulum sürecinin adım adım gösterimini içeren bu video eğitimini izleyin:
 
-<iframe
-  className="w-full aspect-video rounded-xl"
-  src="https://www.youtube.com/embed/-kSOTtYzgEw"
-  title="CrewAI Kurulum Kılavuzu"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-></iframe>
+[![CrewAI Kurulum Kılavuzu](https://img.youtube.com/vi/-kSOTtYzgEw/0.jpg)](https://www.youtube.com/watch?v=-kSOTtYzgEw)
 
 ## Yazılı Eğitim
 

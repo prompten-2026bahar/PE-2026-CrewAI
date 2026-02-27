@@ -283,14 +283,7 @@ Bu kuruluş yönetimi komutlarını kullanmak için CrewAI AMP'ye kimliğinizin 
 
 Adım adım bir gösteri için CLI'yı kullanarak ekibinizi [CrewAI AMP](http://app.crewai.com)'ye dağıtma eğitimi için bu videoyu izleyin.
 
-<iframe
-  className="w-full aspect-video rounded-xl"
-  src="https://www.youtube.com/embed/3EqSV-CYDZA"
-  title="CrewAI Deployment Guide"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-></iframe>
+[![CrewAI Deployment Guide](https://img.youtube.com/vi/3EqSV-CYDZA/0.jpg)](https://www.youtube.com/watch?v=3EqSV-CYDZA)
 
 ### 11. Giriş Yap (Login)
 

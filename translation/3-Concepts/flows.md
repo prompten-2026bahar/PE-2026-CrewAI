@@ -763,15 +763,7 @@ Bu örnekleri keşfederek, çeşitli kullanım durumları için CrewAI Akışlar
 
 Ayrıca, CrewAI'de akışların nasıl kullanılacağını gösteren aşağıdaki YouTube videomuza da göz atın!
 
-<iframe
-  className="w-full aspect-video rounded-xl"
-  src="https://www.youtube.com/embed/MTb5my6VOT8"
-  title="CrewAI Akışları genel bakış"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerPolicy="strict-origin-when-cross-origin"
-  allowFullScreen
-></iframe>
+[![CrewAI Akışları Genel Bakış](https://img.youtube.com/vi/MTb5my6VOT8/0.jpg)](https://www.youtube.com/watch?v=MTb5my6VOT8)
 
 ### Akışları Çalıştırma
 

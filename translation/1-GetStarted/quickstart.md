@@ -352,14 +352,7 @@ Crew'nizi üretime dağıtmanın en kolay yolu [CrewAI AMP](http://app.crewai.co
 
 Adım adım bir gösterim için bu video eğitimine bakın crew'nuzu [CrewAI AMP](http://app.crewai.com) adresine dağıtın.
 
-<iframe
-  className="w-full aspect-video rounded-xl"
-  src="https://www.youtube.com/embed/3EqSV-CYDZA"
-  title="CrewAI Dağıtım Kılavuzu"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-></iframe>
+[![CrewAI Dağıtım Kılavuzu](https://img.youtube.com/vi/3EqSV-CYDZA/0.jpg)](https://www.youtube.com/watch?v=3EqSV-CYDZA)
 
 
   ### Şirket Ortamında Dağıtın

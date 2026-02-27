@@ -661,15 +661,7 @@ except RuntimeError as e:
 
 Altı çizili videoyu, CrewAI'de yapılandırılmış çıktıların nasıl kullanılacağını görmek için kontrol edin:
 
-<iframe
-  className="w-full aspect-video rounded-xl"
-  src="https://www.youtube.com/embed/dNpKQk5uxHw"
-  title="CrewAI'de yapılandırılmış çıktılar"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerPolicy="strict-origin-when-cross-origin"
-  allowFullScreen
-></iframe>
+[![CrewAI'de Yapılandırılmış Çıktılar](https://img.youtube.com/vi/dNpKQk5uxHw/0.jpg)](https://www.youtube.com/watch?v=dNpKQk5uxHw)
 
 ## Sonuç (Conclusion)
 
