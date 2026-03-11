@@ -6,7 +6,7 @@
 |------|----------------|
 | Adil NAS | 20259257013|
 | Elif Sude ATEŞ | 20259257009 |
-| Selman ÖZKAN | 20259257012 |
+| Ömer Said BİRCAN | 20259258001 |
 
 ## Kütüphane Tanıtımı
 **CrewAI**, birden fazla yapay zeka ajanının birlikte çalışmasını orkestre etmek için tasarlanmış, Python tabanlı açık kaynaklı bir çerçevedir. Her ajan belirli bir rol, hedef ve araç seti ile tanımlanır; bu ajanlar görevleri paylaşarak ve birbirinin çıktılarını girdi olarak kullanarak karmaşık iş akışlarını tamamlar. LangChain ekosistemiyle uyumlu olup OpenAI, Anthropic gibi çeşitli LLM sağlayıcılarını destekler. Özellikle ardışık (sequential) veya hiyerarşik görev planlaması gerektiren çok-ajanlı sistemler inşa etmek için kullanılır.
