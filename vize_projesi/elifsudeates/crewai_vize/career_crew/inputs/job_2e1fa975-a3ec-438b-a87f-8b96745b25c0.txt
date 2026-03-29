@@ -1,0 +1,61 @@
+İş ilanı hakkında
+Turkcell olarak yeteneklerimize eşsiz insan deneyimi yaşatarak, değer yaratan sürdürülebilir bir organizasyon inşa etmeyi ve işveren markamızı zirveye taşımayı hedefliyoruz. Bu hedef doğrultusunda benimsediğimiz değerlerimizi iş yapış biçimlerimize yansıtıyoruz.
+
+
+Turkcell’de Neye Değer Veriyoruz?
+
+İnsan Odaklılık: Eşsiz insan deneyimi oluşturmak amacıyla uygulamalarımızın merkezinde insanı konumluyor, çalışanlarımızın potansiyelini en üst düzeye çıkarmayı ve onların yeteneklerini geliştirmeyi hedefliyoruz.
+Yenilik: İnsanların hayatında fark yaratan yenilikçi çözümler üretmek, fikir ve teknolojileri keşfetmek için tutkulu bir şekilde çalışıyoruz. 🚀
+
+Mükemmellik: Dahil olduğumuz ve temas ettiğimiz her noktada mükemmeliyeti hedefliyor, kendimize yüksek standartlar belirliyor, olağanüstü sonuçlar elde ediyoruz. 🎯👌🏼
+
+İş Birliği: Başarının anahtarı olarak birlikte çalışmayı, saygı ve şeffaflık kültürünü teşvik ediyoruz. 👥🔗🧩
+Müşteri Odaklılık: Müşterilerimizin ihtiyaçlarını merkeze koyarak olağanüstü müşteri deneyimleri sunmayı hedefliyoruz. 🤝🖇️
+Sürdürülebilirlik: Müşterilerimiz, çalışanlarımız ve dünyamız için sürdürülebilir bir gelecek amacıyla çalışıyoruz. 🌍
+
+
+
+Ne Bekliyoruz?
+
+Üniversitelerin Bilgisayar, Yazılım, Elektronik, Telekomünikasyon Mühendisliği veya Bilgisayar Bilimleri bölümlerinden mezun olan,
+En az 5+ yıl React & Next.js ile ölçeklenebilir, yüksek performanslı frontend uygulamaları geliştirmiş,
+TypeScript ile güçlü tip güvenliği sağlayarak maintainable kod yazabilen,
+Redux, Redux Toolkit, React Query gibi state management kütüphanelerini etkin şekilde kullanabilen,
+SCSS/SASS ve modern CSS mimarileri (BEM, CSS Modules, Utility-first) konusunda yetkin,
+NX Monorepo yapısında modüler, yeniden kullanılabilir kütüphaneler ve micro-frontend çözümleri geliştirmiş,
+REST/stateless API ve microservice mimarilerinde çalışmış,
+CI/CD süreçlerinde, özellikle Jenkins pipeline yönetiminde tecrübeli,
+Git ile versiyon kontrolü konusunda yetkin ve Gitflow/Trunk-Based Development gibi akışlara hakim,
+Sentry, Datadog, Dynatrace gibi araçlarla frontend hata takibi ve performans izleme konularında bilgi sahibi,
+Performans, güvenlik ve accessibility standartlarını belirleyip uygulayabilen,
+Kod inceleme süreçlerinde aktif rol alarak best practice’leri ekibe yayabilen,
+Ürün ve tasarım ekipleriyle yakın çalışarak teknik kararları iş hedefleriyle uyumlu hale getirebilen,
+Junior/mid seviye geliştiricilere mentorluk ve teknik rehberlik sağlayabilen,
+Bireysel motivasyonu yüksek, öğrenmeye & gelişime açık, takım oyununu benimseyen,
+Çok güçlü analitik düşünme ve problem çözme yeteneği olan, insiyatif alan, inovatif düşünme yeteneği ile yaratıcı çözümler üretebilen,
+Çok iyi düzeyde sözlü ve yazılı iletişim becerileri olan.
+Unit, integration ve E2E test (Jest, React Testing Library, Cypress vb.) yazmış,
+Webpack, Vite veya benzeri build tool’larda özelleştirme yapmış,
+Performans optimizasyonu ve Lighthouse skorlarını yükseltme konusunda tecrübeli,
+Design system veya UI component library geliştirme (Storybook, Ant Design vb.) pratiği olan,
+Docker ve containerized ortamlarla çalışmış.
+
+
+
+
+Turkcell'de FRONTEND DEVELOPER (BiP) Ne Yapar?
+
+Turkcell BIP WEB ve Desktop Uygulaması üzerinden yürütülen geliştirmelerin teknik tasarım ve yazılım süreçlerinden sorumludur,
+Mimari kararlara yön verecek teknolojik trendleri takip eder performans gereksinimlerini belirler,
+Ürün geliştirme sürecinin uçtan uca kalitesine katkı sağlar ve test süreçlerini destekler,
+Özellikerin geliştirilmesi, hatalarının giderilmesi, KPI takibi ve operasyonel devir süreçlerinden sorumludur,
+Geliştirilen uygulamaların devreye alınma süreçlerini koordine eder ve gerektiğinde teknik destek verir,
+Ürün ve çözümlerin yazılım mimarisini, teknik ve fonksiyonel yol haritasını belirler, tüm yazılım ve geliştirme yaşam döngüsünden (SDLC - yaratılması, yaşatılması ve gerektiğinde dönüştürülmesi ya da sonlandırılması) sorumludur,
+Müşteri iş ihtiyaçları doğrultusunda, ürün ve çözümleri geliştirir. İş birimlerinden gelen taleplerin tasarım-geliştirme safhalarının müşteri odaklı ve rekabete uygun hızda ardı ardına geliştirilmesini sağlar,
+Sorumlusu olduğu altyapılar ile ilgili süreçlere ilişkin ihtiyaçların analiz incelemesini (review’unu) gerçekleştirir, teknik tasarımları oluşturur, proje planlarını detaylandırır, geliştirme (development) fazını yürütür ve test destek aşamalarında görev alır.
+Devreye alım sonrası destek ve kod değişikliği gerektiren konularda ilgili yazılımların gerçekleştirilmesinden sorumludur,
+Sorumlu olduğu sistemler ve geliştirmeler için gerekli olan yatırım bütçesini planlar ve yürütür,
+Uygulanabilir teknoloji, ürün ve çözümlerin oluşturulmasına yönelik öncelikle Turkcell Grup ihtiyacının yaratılması ve ticari çözümlerin geliştirilmesi ve uygulanmasından sorumludur,
+AR-GE vizyonu kapsamında ürünleştirme fırsatlarını bütünsel bir bakış açısı ile gözetir ve gerekli yatırımlara karar verir,
+Sorumluluk alanındaki vizyon, hedef ve stratejileri belirler,
+Uygulama yol haritalarının ve uygulama planının gerektirdiği kararlarının alınmasını sağlar ve takibini yapar.

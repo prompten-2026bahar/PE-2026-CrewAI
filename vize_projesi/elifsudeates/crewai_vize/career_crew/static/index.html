@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerCrew Analysis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgDark: '#0f1117',
+            surface: '#1a1d27',
+            borderDark: '#2d3148',
+            accent: '#6366f1',
+            textPrimary: '#e2e8f0',
+            textMuted: '#64748b'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0f1117; color: #e2e8f0; }
+    .hidden-view { display: none !important; }
+    .fade-in { animation: fadeIn 0.3s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    #log-terminal span { display: block; margin-bottom: 4px; border-bottom: 1px solid #1f2937; padding-bottom: 2px;}
+    .agent-CVParser { color: #60a5fa; }
+    .agent-JobAnalyst { color: #c084fc; }
+    .agent-GapDetector { color: #fb923c; }
+    
+    #markdown-content h1 { font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: #fff;}
+    #markdown-content h2 { font-size: 1.5rem; font-weight: bold; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #cbd5e1; }
+    #markdown-content table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+    #markdown-content th, #markdown-content td { padding: 8px; border: 1px solid #334155; }
+    #markdown-content ul { list-style-type: disc; margin-left: 2rem; margin-bottom: 1rem; }
+  </style>
+</head>
+<body class="flex h-screen overflow-hidden text-sm bg-bgDark selection:bg-accent selection:text-white">
+
+  <!-- LEFT PANEL -->
+  <aside class="w-80 border-r border-borderDark flex flex-col bg-surface">
+    <div class="p-6">
+      <h1 class="text-2xl font-bold flex items-center gap-2 text-white">
+        <i class="ti ti-robot text-accent"></i> CareerCrew
+      </h1>
+      <p class="text-textMuted mt-1">Multi-Agent CV Analysis</p>
+    </div>
+
+    <div class="px-6 mb-4">
+      <label class="block text-xs font-semibold text-textMuted uppercase mb-2">LLM Provider</label>
+      <select id="llm-provider-select" onchange="onProviderChange()" class="w-full bg-bgDark border border-borderDark rounded-md p-2 text-textPrimary outline-none focus:border-accent">
+        <option value="ollama">Ollama (Local)</option>
+        <option value="gemini">Google Gemini</option>
+      </select>
+    </div>
+
+    <div class="px-6 mb-6">
+      <label class="block text-xs font-semibold text-textMuted uppercase mb-2 flex justify-between items-center">
+        Select Model
+        <button onclick="refreshModels()" id="refresh-models-btn" class="hover:text-accent transition-colors" title="Refresh local models">
+          <i class="ti ti-refresh text-xs"></i>
+        </button>
+      </label>
+      <div class="flex gap-2">
+        <select id="llm-model-select" class="flex-1 bg-bgDark border border-borderDark rounded-md p-2 text-textPrimary outline-none focus:border-accent">
+          <!-- Populated by JS -->
+        </select>
+      </div>
+      
+      <button id="test-conn-btn" onclick="testConnection()" class="mt-3 w-full py-2 bg-surface border border-borderDark rounded text-xs font-semibold hover:bg-bgDark transition-colors flex items-center justify-center gap-2">
+        <i class="ti ti-plug"></i> Test Connection
+      </button>
+    </div>
+
+    <nav class="flex-1 px-4 space-y-1">
+      <button onclick="navigate('analysis')" id="nav-analysis" class="w-full flex items-center gap-3 px-4 py-3 rounded-md text-textPrimary hover:bg-bgDark transition-colors bg-bgDark border border-borderDark focus:outline-none">
+        <i class="ti ti-upload text-lg"></i> New Analysis
+      </button>
+      <button onclick="navigate('reports')" id="nav-reports" class="w-full flex items-center gap-3 px-4 py-3 rounded-md text-textMuted hover:bg-bgDark hover:text-textPrimary transition-colors focus:outline-none">
+        <i class="ti ti-file-text text-lg"></i> Reports
+      </button>
+      <button onclick="navigate('logs')" id="nav-logs" class="w-full flex items-center gap-3 px-4 py-3 rounded-md text-textMuted hover:bg-bgDark hover:text-textPrimary transition-colors focus:outline-none">
+        <i class="ti ti-activity text-lg" id="logs-icon"></i> Live Logs
+      </button>
+      <button onclick="navigate('health')" id="nav-health" class="w-full flex items-center gap-3 px-4 py-3 rounded-md text-textMuted hover:bg-bgDark hover:text-textPrimary transition-colors focus:outline-none">
+        <i class="ti ti-heart-rate-monitor text-lg"></i> Health
+      </button>
+    </nav>
+    
+    <div class="p-6 border-t border-borderDark">
+      <div class="flex items-center gap-2 text-xs text-textMuted">
+        <div class="w-2 h-2 rounded-full bg-emerald-500" id="system-dot"></div>
+        <span id="system-status-text">System Online</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- RIGHT PANEL -->
+  <main class="flex-1 overflow-y-auto relative bg-bgDark pb-20">
+    
+    <!-- Toast System -->
+    <div id="toast-container" class="fixed top-4 right-4 z-50 flex flex-col gap-2"></div>
+
+    <!-- VIEW 1: New Analysis -->
+    <section id="view-analysis" class="p-8 fade-in">
+      <header class="mb-8">
+        <h2 class="text-3xl font-bold text-white">New Analysis</h2>
+        <p class="text-textMuted mt-2">Submit a CV and Job Posting to the CrewAI agents.</p>
+      </header>
+      
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        <!-- CV Card -->
+        <div class="bg-surface rounded-xl border border-borderDark overflow-hidden flex flex-col">
+          <div class="p-4 border-b border-borderDark flex items-center gap-2 font-semibold bg-bgDark">
+            <i class="ti ti-id text-accent"></i> Your CV
+          </div>
+          <textarea id="cv-text" class="w-full h-80 bg-transparent p-4 outline-none resize-none placeholder-textMuted" placeholder="Paste your CV text here..."></textarea>
+        </div>
+        
+        <!-- Job Card -->
+        <div class="bg-surface rounded-xl border border-borderDark overflow-hidden flex flex-col">
+          <div class="p-4 border-b border-borderDark flex items-center gap-2 font-semibold bg-bgDark">
+            <i class="ti ti-briefcase text-accent"></i> Job Posting
+          </div>
+          <textarea id="job-text" class="w-full h-80 bg-transparent p-4 outline-none resize-none placeholder-textMuted" placeholder="Paste the job posting description here..."></textarea>
+        </div>
+      </div>
+
+      <button id="run-btn" onclick="startAnalysis()" class="mt-6 w-full py-4 rounded-xl bg-accent hover:bg-indigo-600 text-white font-bold text-lg transition-colors flex justify-center items-center gap-2">
+        <i class="ti ti-rocket"></i> Run Phase 1 Analysis
+      </button>
+      
+      <!-- Status Widget -->
+      <div id="status-widget" class="mt-8 bg-surface border border-borderDark rounded-xl p-6 hidden-view">
+        <div class="flex justify-between items-center mb-4">
+          <div class="flex items-center gap-3">
+            <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-400 font-mono text-xs" id="status-job-id">ID</span>
+            <span class="font-bold uppercase tracking-wider text-xs" id="status-text">RUNNING</span>
+          </div>
+          <button id="view-reports-btn" onclick="navigate('reports')" class="hidden px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-md text-white font-medium text-xs transition-colors">
+            View Reports
+          </button>
+        </div>
+        <div class="w-full bg-bgDark rounded-full h-2 overflow-hidden">
+          <div id="progress-bar" class="bg-accent h-2 transition-all duration-1000 w-0"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: Reports -->
+    <section id="view-reports" class="p-8 hidden-view fade-in">
+      <header class="flex justify-between items-center mb-8">
+        <div>
+          <h2 class="text-3xl font-bold text-white">Generated Reports</h2>
+          <p class="text-textMuted mt-2">View gap analysis maps and results from past runs.</p>
+        </div>
+        <button onclick="loadReports()" class="w-10 h-10 rounded-full bg-surface border border-borderDark flex items-center justify-center hover:bg-bgDark transition-colors">
+          <i class="ti ti-refresh text-textPrimary"></i>
+        </button>
+      </header>
+      
+      <div id="reports-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <!-- populated by JS -->
+      </div>
+    </section>
+
+    <!-- VIEW 3: Logs -->
+    <section id="view-logs" class="p-8 hidden-view fade-in h-full flex flex-col">
+      <header class="mb-4 flex-shrink-0">
+        <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+          Agent Activity <div id="live-indicator" class="w-3 h-3 rounded-full bg-red-500 animate-pulse hidden"></div>
+        </h2>
+      </header>
+      
+      <div class="flex-1 bg-[#080a12] rounded-xl border border-borderDark p-4 overflow-hidden flex flex-col relative font-mono text-xs">
+        <div class="absolute top-4 right-4 flex gap-2">
+           <button onclick="clearLogs()" class="px-3 py-1 bg-surface border border-borderDark rounded text-textMuted hover:text-white transition-colors">Clear</button>
+        </div>
+        <div id="log-terminal" class="flex-1 overflow-y-auto mt-8 pr-2 pb-4 space-y-1">
+          <div class="text-textMuted italic p-4 text-center">No active jobs. Start an analysis to see logs.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 4: Health -->
+    <section id="view-health" class="p-8 hidden-view fade-in">
+      <header class="mb-8">
+        <h2 class="text-3xl font-bold text-white">System Status</h2>
+      </header>
+      <div class="grid grid-cols-2 gap-6 max-w-2xl">
+        <div class="bg-surface p-6 rounded-xl border border-borderDark block">
+          <div class="text-textMuted text-xs font-semibold mb-1">API Status</div>
+          <div class="text-xl font-bold flex items-center gap-2"><div class="w-3 h-3 bg-emerald-500 rounded-full"></div> Online</div>
+        </div>
+        <div class="bg-surface p-6 rounded-xl border border-borderDark block">
+          <div class="text-textMuted text-xs font-semibold mb-1">LLM Provider</div>
+          <div class="text-xl font-bold" id="health-llm">Unknown</div>
+        </div>
+      </div>
+      <button onclick="checkHealth()" class="mt-6 px-4 py-2 bg-surface border border-borderDark hover:bg-bgDark rounded text-white transition-colors">
+        Refresh Status
+      </button>
+    </section>
+
+  </main>
+
+  <!-- HTML Report Modal -->
+  <div id="report-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex justify-center items-center hidden-view fade-in p-4 xl:p-12">
+    <div class="bg-surface w-full max-w-5xl h-full rounded-2xl border border-borderDark shadow-2xl flex flex-col overflow-hidden">
+      <div class="flex justify-between items-center p-4 border-b border-borderDark bg-bgDark">
+        <h3 class="font-bold text-lg truncate flex-1" id="modal-title">Report Title</h3>
+        <button onclick="closeModal()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface text-textMuted hover:text-white transition-colors">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+      <div class="flex-1 overflow-y-auto p-8 bg-[#0d1017]">
+        <div id="markdown-content" class="max-w-3xl mx-auto prose prose-invert prose-indigo leading-relaxed text-sm"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // State
+    const state = {
+      currentView: 'analysis',
+      currentJobId: null,
+      eventSource: null,
+      pollInterval: null
+    };
+
+    // --- Toast System ---
+    function showToast(message, type = 'info') {
+      const colors = {
+        error: 'bg-red-500/10 border-red-500/50 text-red-400',
+        success: 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400',
+        info: 'bg-indigo-500/10 border-indigo-500/50 text-indigo-400'
+      };
+      const toast = document.createElement('div');
+      toast.className = `p-4 border rounded-md shadow-lg fade-in transition duration-300 ${colors[type]}`;
+      toast.innerText = message;
+      document.getElementById('toast-container').appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    // --- Navigation logic ---
+    function navigate(view) {
+      document.querySelectorAll('main > section').forEach(el => el.classList.add('hidden-view'));
+      document.querySelectorAll('aside nav button').forEach(el => {
+        el.classList.remove('bg-bgDark', 'border-borderDark', 'text-textPrimary');
+        el.classList.add('text-textMuted', 'border-transparent');
+      });
+      
+      document.getElementById(`view-${view}`).classList.remove('hidden-view');
+      const navBtn = document.getElementById(`nav-${view}`);
+      navBtn.classList.remove('text-textMuted', 'border-transparent');
+      navBtn.classList.add('bg-bgDark', 'border-borderDark', 'text-textPrimary');
+      state.currentView = view;
+      
+      if(view === 'reports') loadReports();
+      if(view === 'health') checkHealth();
+    }
+
+    // --- API Calls ---
+    async function startAnalysis() {
+      const cvText = document.getElementById('cv-text').value;
+      const jobText = document.getElementById('job-text').value;
+      const provider = document.getElementById('llm-provider-select').value;
+      const model = document.getElementById('llm-model-select').value;
+      
+      if(!cvText || !jobText) {
+        showToast("Please provide both CV and Job Posting.", "error");
+        return;
+      }
+      
+      if(!model) {
+        showToast("Please select a model first.", "error");
+        return;
+      }
+      
+      const btn = document.getElementById('run-btn');
+      btn.innerHTML = `<i class="ti ti-loader animate-spin"></i> Starting...`;
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('/api/phase1', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ 
+            cv_text: cvText, 
+            job_text: jobText, 
+            llm_provider: provider,
+            model_name: model
+          })
+        });
+        
+        if(!res.ok) throw new Error("Failed to start analysis");
+        const data = await res.json();
+        
+        state.currentJobId = data.job_id;
+        
+        // UI updates
+        document.getElementById('status-widget').classList.remove('hidden-view');
+        document.getElementById('status-job-id').innerText = data.job_id.substring(0,8);
+        document.getElementById('status-text').innerText = "RUNNING";
+        document.getElementById('status-text').className = "font-bold uppercase tracking-wider text-xs text-indigo-400";
+        document.getElementById('progress-bar').style.width = "40%";
+        document.getElementById('view-reports-btn').classList.add('hidden');
+        
+        showToast("Analysis started!", "success");
+        navigate('logs');
+        connectLogs(data.job_id);
+        startPolling(data.job_id);
+        
+      } catch (e) {
+        showToast(e.message, "error");
+      } finally {
+        btn.innerHTML = `<i class="ti ti-rocket"></i> Run Phase 1 Analysis`;
+        btn.disabled = false;
+      }
+    }
+
+    function startPolling(jobId) {
+      if(state.pollInterval) clearInterval(state.pollInterval);
+      state.pollInterval = setInterval(async () => {
+        try {
+          const res = await fetch(`/api/status/${jobId}`);
+          if(res.ok) {
+            const data = await res.json();
+            if(data.status === 'completed') {
+              clearInterval(state.pollInterval);
+              document.getElementById('status-text').innerText = "COMPLETED";
+              document.getElementById('status-text').className = "font-bold uppercase tracking-wider text-xs text-emerald-500";
+              document.getElementById('progress-bar').style.width = "100%";
+              document.getElementById('progress-bar').classList.remove('bg-accent');
+              document.getElementById('progress-bar').classList.add('bg-emerald-500');
+              document.getElementById('view-reports-btn').classList.remove('hidden');
+              showToast("Analysis complete!", "success");
+            } else if (data.status === 'failed') {
+              clearInterval(state.pollInterval);
+              document.getElementById('status-text').innerText = "FAILED";
+              document.getElementById('status-text').className = "font-bold uppercase tracking-wider text-xs text-red-500";
+              document.getElementById('progress-bar').style.width = "100%";
+              document.getElementById('progress-bar').classList.remove('bg-accent');
+              document.getElementById('progress-bar').classList.add('bg-red-500');
+              showToast(`Error: ${data.error}`, "error");
+            }
+          }
+        } catch(e) {}
+      }, 2000);
+    }
+
+    async function loadReports() {
+      try {
+        const res = await fetch('/api/reports');
+        const data = await res.json();
+        const grid = document.getElementById('reports-grid');
+        
+        if(!data || data.length === 0) {
+          grid.innerHTML = '<div class="col-span-full text-center p-8 border border-dashed border-borderDark rounded-xl text-textMuted">No reports found.</div>';
+          return;
+        }
+
+        grid.innerHTML = data.map(r => `
+          <div class="bg-surface p-4 rounded-xl border border-borderDark flex items-center justify-between hover:border-textMuted transition-colors">
+            <div class="flex items-center gap-4 truncate">
+              <div class="w-10 h-10 rounded bg-bgDark border border-borderDark flex items-center justify-center text-accent">
+                <i class="ti ti-file-analytics flex-shrink-0 text-xl"></i>
+              </div>
+              <div class="truncate">
+                <div class="font-semibold text-textPrimary truncate">${r.filename}</div>
+                <div class="text-xs text-textMuted mt-1">${r.size_kb} KB • ${r.created_at}</div>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <button onclick="previewReport('${r.filename}')" class="px-3 py-1.5 bg-bgDark rounded border border-borderDark hover:text-white transition-colors text-xs font-medium">Preview</button>
+            </div>
+          </div>
+        `).join('');
+      } catch(e) {
+        showToast("Error loading reports", "error");
+      }
+    }
+
+    async function previewReport(filename) {
+      try {
+        const res = await fetch(`/api/reports/${filename}`);
+        if(!res.ok) throw new Error("Could not load report");
+        const data = await res.json();
+        
+        document.getElementById('modal-title').innerText = filename;
+        document.getElementById('markdown-content').innerHTML = marked.parse(data.content);
+        document.getElementById('report-modal').classList.remove('hidden-view');
+      } catch(e) {
+        showToast(e.message, "error");
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('report-modal').classList.add('hidden-view');
+    }
+
+    function clearLogs() {
+      document.getElementById('log-terminal').innerHTML = '';
+    }
+
+    function connectLogs(jobId) {
+      if(state.eventSource) state.eventSource.close();
+      clearLogs();
+      const term = document.getElementById('log-terminal');
+      document.getElementById('live-indicator').classList.remove('hidden');
+      document.getElementById('logs-icon').classList.add('text-red-400');
+      
+      const es = new EventSource(`/api/logs/${jobId}`);
+      state.eventSource = es;
+      
+      es.addEventListener('log', (e) => {
+        const line = document.createElement('span');
+        const text = e.data;
+        const time = new Date().toLocaleTimeString([], {hour12:false});
+        
+        let formattedText = text;
+        if(text.includes('[CVParser]')) formattedText = text.replace('[CVParser]', '<strong class="agent-CVParser">[CVParser]</strong>');
+        else if(text.includes('[JobAnalyst]')) formattedText = text.replace('[JobAnalyst]', '<strong class="agent-JobAnalyst">[JobAnalyst]</strong>');
+        else if(text.includes('[GapDetector]')) formattedText = text.replace('[GapDetector]', '<strong class="agent-GapDetector">[GapDetector]</strong>');
+        
+        line.innerHTML = `<span class="text-textMuted inline mr-2">[${time}]</span> ${formattedText}`;
+        term.appendChild(line);
+        term.scrollTop = term.scrollHeight;
+      });
+
+      es.addEventListener('done', () => {
+        es.close();
+        document.getElementById('live-indicator').classList.add('hidden');
+        document.getElementById('logs-icon').classList.remove('text-red-400');
+        const line = document.createElement('span');
+        line.className = "text-emerald-500 mt-2 font-bold";
+        line.innerText = "=== SYSTEM: JOB COMPLETED ===";
+        term.appendChild(line);
+        term.scrollTop = term.scrollHeight;
+      });
+      
+      es.onerror = () => {
+        es.close();
+        document.getElementById('live-indicator').classList.add('hidden');
+        document.getElementById('logs-icon').classList.remove('text-red-400');
+      };
+    }
+
+    async function checkHealth() {
+      try {
+        const res = await fetch('/api/health');
+        if(!res.ok) throw new Error();
+        const data = await res.json();
+        document.getElementById('health-llm').innerText = data.llm_provider || 'Unknown';
+      } catch(e) {
+        showToast("Health check failed", "error");
+      }
+    }
+
+    // --- Dynamic Model Logic ---
+    async function refreshModels() {
+      const provider = document.getElementById('llm-provider-select').value;
+      const select = document.getElementById('llm-model-select');
+      const refreshBtn = document.getElementById('refresh-models-btn');
+      
+      refreshBtn.classList.add('animate-spin');
+      select.innerHTML = '<option value="">Loading...</option>';
+      
+      try {
+        const res = await fetch(`/api/llm/models?provider=${provider}`);
+        const data = await res.json();
+        
+        if(data.models && data.models.length > 0) {
+          select.innerHTML = data.models.map(m => 
+            `<option value="${m.name}">${m.name}${m.details ? ` (${m.details})` : ''}</option>`
+          ).join('');
+        } else {
+          select.innerHTML = '<option value="">No models found</option>';
+        }
+      } catch (e) {
+        showToast("Failed to fetch models", "error");
+        select.innerHTML = '<option value="">Error fetching models</option>';
+      } finally {
+        refreshBtn.classList.remove('animate-spin');
+      }
+    }
+
+    async function testConnection() {
+      const provider = document.getElementById('llm-provider-select').value;
+      const model = document.getElementById('llm-model-select').value;
+      const btn = document.getElementById('test-conn-btn');
+      
+      if(!model) {
+        showToast("Select a model to test", "error");
+        return;
+      }
+      
+      const originalHtml = btn.innerHTML;
+      btn.innerHTML = `<i class="ti ti-loader animate-spin"></i> Testing...`;
+      btn.disabled = true;
+      
+      try {
+        const res = await fetch('/api/llm/test', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ provider, model })
+        });
+        const data = await res.json();
+        
+        if(data.status === 'success') {
+          btn.innerHTML = `<i class="ti ti-check text-emerald-500"></i> Success`;
+          showToast("Model connection verified!", "success");
+        } else {
+          btn.innerHTML = `<i class="ti ti-x text-red-500"></i> Failed`;
+          showToast("Connection failed: " + data.message, "error");
+        }
+      } catch (e) {
+        btn.innerHTML = `<i class="ti ti-x text-red-500"></i> Error`;
+        showToast("Api error during test", "error");
+      } finally {
+        setTimeout(() => {
+          btn.innerHTML = originalHtml;
+          btn.disabled = false;
+        }, 3000);
+      }
+    }
+
+    function onProviderChange() {
+      refreshModels();
+    }
+
+    // Init
+    checkHealth();
+    refreshModels();
+  </script>
+</body>
+</html>

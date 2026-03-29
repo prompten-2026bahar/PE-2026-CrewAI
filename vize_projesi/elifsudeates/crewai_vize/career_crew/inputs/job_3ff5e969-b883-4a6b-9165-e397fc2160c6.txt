@@ -1,0 +1,70 @@
+About the job
+At Hepsiburada, we are driven by our mission to improve people's lives by developing innovative products and services. Prioritizing customer satisfaction, we offer over 280 million products across more than 30 categories. Through our marketplace model, we bring together over 100,000 businesses. With Türkiye’s and the region's largest Smart Operations Center, industry-leading R&D initiatives, and innovative solutions, we contribute significantly to the growth of the e-commerce ecosystem. For the past two years, we have proudly held the title of Turkey's most recommended e-commerce platform.
+
+
+Through our innovative services like HepsiJET, Hepsipay, HepsiLojistik, HepsiAd, and Hepsiburada Global, we create value for all our stakeholders. Committed to harnessing technology for social benefit, our “Technology Empowerment for Women Entrepreneurs” program has connected thousands of women entrepreneurs with e-commerce, supporting their growth. Our goal is to leverage digitalization and e-commerce to enable greater economic participation.
+
+
+With 25 years of experience driven by innovation and entrepreneurship, we proudly continue our journey as “Türkiye’s Hepsiburada” and the first and only Turkish company listed on NASDAQ, the world's leading technology exchange.
+
+
+For our colleagues, we offer a work environment that supports creating together and adding more meaning to our work. As a team full of opportunities, we are happy to develop, produce and succeed together.
+
+
+If you want to be part of a team that creates value for everyone and makes life easier through innovative products and services—and contribute to exciting success stories—the future starts here.
+
+
+We are looking for a Service Reliability Engineer (SRE) to join our infrastructure and reliability team. As a SRE, you will be responsible for maintaining the stability, scalability and performance of production systems, automating operations and improving reliability across our platforms. This position is ideal for engineers who are passionate about automation, monitoring and building reliable large-scale systems.
+
+
+Key Responsibilities:
+
+
+
+Maintain and improve the reliability, performance and scalability of production systems and cloud infrastructure.
+Develop and support monitoring, logging and alerting systems to proactively identify and resolve incidents.
+Automate operational workflows and routine maintenance using scripting or Infrastructure as Code tools.
+Participate in incident management, root cause analysis and post-incident reviews.
+Collaborate with development and DevOps teams to enhance CI/CD pipelines and deployment processes.
+Implement best practices for system observability, fault tolerance and performance optimization.
+Ensure compliance with internal security, audit and regulatory requirements.
+Participate in capacity planning and architecture reviews to support future growth.
+
+
+Requirements:
+
+
+
+Experience: 3–5 years in SRE, DevOps or Infrastructure Engineering roles.
+Education: Bachelor’s degree in Computer Science, Information Technology, or equivalent practical experience.
+
+
+Technical Skills:
+
+
+
+Strong knowledge of Linux systems administration and networking.
+Experience with monitoring tools (Prometheus, Grafana, ELK, Zabbix, etc.).
+Proficiency in scripting languages (Python, Bash, or similar).
+Experience with CI/CD systems (Jenkins, GitLab CI/CD, ArgoCD, etc.).
+Familiarity with cloud platforms (AWS, Azure, GCP) and container technologies (Docker, Kubernetes).
+Understanding of automation and IaC tools (Terraform, Ansible, etc.).
+
+
+Soft Skills:
+
+
+
+Strong analytical and troubleshooting abilities.
+Proactive mindset focused on reliability and continuous improvement.
+Effective communication and teamwork skills.
+
+
+Nice to Have:
+
+
+
+Experience with microservices architecture and service mesh (Istio, Linkerd).
+Familiarity with incident management platforms (PagerDuty, Opsgenie).
+Background in high-availability, security-critical or regulated environments.
+Knowledge of programming (Go, Java, or C#) for reliability-focused tools.

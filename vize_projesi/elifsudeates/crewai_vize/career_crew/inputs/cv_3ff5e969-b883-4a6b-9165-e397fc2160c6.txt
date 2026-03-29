@@ -1,0 +1,113 @@
+Çağatay ÜRESİN
+Bilgisayar Mühendisi | Backend Geliştirici & DevOps
+cagatayuresin@gmail.com | +90 535 966 98 64 | Kocaeli, Türkiye | LinkedIn |
+GitHub
+
+PROFESYONEL ÖZET
+Backend Geliştirme ve Site Güvenilirlik Mühendisliği (SRE) alanlarında güçlü bir
+temele sahip Bilgisayar Mühendisi ve Yüksek Lisans öğrencisi. Günlük otomasyon,
+API geliştirme ve sistem yönetimi için Python ve Bash scripting konularında yetkin.
+Kubernetes kümelerini yönetme, Jenkins ile CI/CD pipeline’ları oluşturma ve Kafka
+ile Redis kullanarak dağıtık sistemleri entegre etme deneyimine sahip. Şu anda AI
+Mühendisliği ve MLOps alanlarında uzmanlığını genişleterek LLM destekli ajanlar
+ve tahmin modelleri geliştiriyor. Kod ile altyapı arasında köprü kurarak dayanıklı ve
+ölçeklenebilir sistemler inşa edebilen çok yönlü bir mühendis.
+İŞ DENEYIMI
+Backend Geliştirici & SRE & DevOps
+Detaysoft | Sivas, TR | Kasım 2021 - Günümüz
+Detaysoft’un üretim kümelerinin Site Güvenilirliği, izleme ve DevOps yönetimi.
+SAP sistemleriyle entegre Odoo modülleri geliştirdi ve otomatik test ile süreç
+optimizasyonu için Selenium botları uyguladı. İki Ar-Ge projesine akıllı
+sözleşmeler ve REST API’ler tasarlayarak ve uygulayarak katkıda bulundu.
+Python Geliştirici
+Serbest Çalışan | Bursa, TR | Haziran 2016 - Kasım 2021
+Kullanıcı etkileşimini artırmak için müşteri odaklı API çözümleri ve özel Discord
+ve Telegram botları geliştirdi, çeşitli müşteri ihtiyaçlarına uygun özelleştirilmiş
+yazılım sistemleri sundu.
+EĞITIM
+Bilgisayar Mühendisliği Yüksek Lisans
+Sivas Cumhuriyet Üniversitesi | 2025 - Devam Ediyor
+Bilgisayar Mühendisliği Lisans
+Sivas Cumhuriyet Üniversitesi | 2021 - 2025
+GPA: 3.43 / 4.00 (Onur Derecesi ile Mezun)
+Elektronik Mühendisliği (Lisans Eğitimi)
+Bursa Uludağ Üniversitesi | 2012 - 2021
+•
+
+•
+
+•
+
+YETENEKLER
+Programlama Dilleri
+Python, Go, Java, Bash Scripting
+Backend Framework’leri
+FastAPI, Django, Odoo, Selenium, Puppeteer
+AI & ML Mühendisliği
+LangChain, Ollama, LLM Entegrasyonu
+Veri & Mesajlaşma
+PostgreSQL, MongoDB, Redis, Elasticsearch, Kafka, RabbitMQ
+DevOps & Bulut
+GitLab CI/CD, ArgoCD, Kubernetes, Helm, Docker, Jenkins, Ansible, Terraform,
+Nginx, DigitalOcean
+Sistem Yönetimi
+Linux (Ubuntu), Systemd, Ağ Yönetimi, Zeek
+Gözlemlenebilirlik
+Prometheus, Grafana, Kibana
+Mimari & Metodolojiler
+Git, Mikroservisler, RESTful API’ler, gRPC, Agile, Scrum, Kanban
+Yabancı Diller
+Türkçe: Anadil
+İngilizce: Orta Seviye (B1)
+İspanyolca: Temel (A1)
+SERTIFIKALAR
+Gümüş Seviye Cankurtaran - Türkiye Sualtı Sporları Federasyonu (TSSF) -
+Büyükada Su Sporları Kulübü’nde çalıştı (2012).
+1. Kademe Yardımcı Yüzme Antrenörü - Türkiye Yüzme Federasyonu - 2011 ve
+2015 yıllarında profesyonel olarak antrenörlük yaptı.
+PROJELER
+Yapay Zeka Destekli Ağ Saldırı Tespiti (Yüksek Lisans Tezi)
+DNS tünelleme saldırılarını analiz etmek için Zeek ve LangChain kullanan hibrit bir
+saldırı tespit sistemi geliştiriliyor.
+Büyük Dil Modelleri (LLM’ler) kullanılarak ağ günlüklerinin semantik analizi
+yapılıyor, geleneksel imza tabanlı yöntemlere kıyasla yanlış pozitif oranları önemli
+ölçüde azaltılıyor.
+•
+•
+•
+
+•
+•
+
+Doğal Dil Veritabanı Arayüzü (Ar-Ge)
+Kullanıcıların doğal dil kullanarak PostgreSQL veritabanlarını sorgulamasını
+sağlayan LangChain ve Ollama kullanan akıllı bir ajan tasarlandı.
+Modelin karmaşık şema sorgularını doğru bir şekilde işleyebilmesi için bağlam
+penceresini genişletmek amacıyla vektör arama için Elasticsearch entegre edildi.
+Odoo CRM Kazanma Oranı Tahmincisi
+Satış fırsatlarını kazanma olasılığını tahmin etmek için Odoo CRM içinde bir
+Makine Öğrenmesi modeli eğitildi ve dağıtıldı.
+Kaynak tahsisini optimize etmek için satış temsilcilerine gerçek zamanlı “kazanma
+olasılığı” puanları sağlamak amacıyla geçmiş satış verileri analiz edildi.
+Observer (Yüksek Performanslı İzleme Sistemi)
+Standart araçların sınırlamalarını aşmak için mikroservis mimarisi kullanılarak özel
+bir Kubernetes izleme çözümü geliştirildi.
+Güvenilir, asenkron metrik alımı için Kafka ve RabbitMQ, yüksek hacimli veri
+depolama ve anomali tespiti için Elasticsearch uygulandı.
+Kurumsal Kubernetes & DevOps Dönüşümü
+Büyük kurumsal müşteriler için şirket içi sunucularda üretim Kubernetes kümeleri
+yönetildi.
+Helm Charts kullanılarak dağıtımlar standartlaştırıldı, dağıtım süreleri ve
+operasyonel hatalar azaltıldı.
+Diğer Önemli Projeler
+Blockchain Ar-Ge (Hyperledger Fabric)
+Araç tescili ve EV şarj ağları (Enpos) için akıllı sözleşmeler ve REST entegrasyon
+katmanları geliştirildi.
+Otomasyon Araçları
+Arka plan görev otomasyonu için SAP Logon AutoBot, uzaktan operasyonlar için
+Argo CD CLI ve güvenli VPN bypass bağlantı testi için Mendirek oluşturuldu.
+Odoo & Entegrasyonlar
+Video Yönetimi, CRM özelleştirmeleri ve SAP entegrasyonları için SOAP/XML
+fatura doğrulayıcıları için özel Odoo modülleri geliştirildi.
+İLGI ALANLARI
+Tüplü Dalış, Sualtı Hokeyi, Elektro Gitar Çalmak.
