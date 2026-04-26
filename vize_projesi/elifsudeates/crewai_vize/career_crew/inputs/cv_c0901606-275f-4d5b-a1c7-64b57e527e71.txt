@@ -1,0 +1,43 @@
+ZAFER YILMAZ
+FRONT-END DEVELOPER
+
+Konya, Türkiye | zaferc@mail.com
+ | +90 (555) 444 33 22
+
+Yaratıcı ve çözüm odaklı bir Frontend Developer olarak, kullanıcı odaklı, etkili ve yüksek performanslı uygulamalar geliştirme konusunda deneyimliyim. HTML, CSS ve JavaScript gibi teknolojilerde derinlemesine bilgi sahibiyim ve kullanıcı deneyimini geliştirmek için UI/UX prensiplerine odaklanıyorum. React ve Vue.js gibi popüler teknolojilerle çalışarak, kullanıcı arayüzlerinin performansını her zaman ön planda tutuyorum.
+
+İŞ DENEYİMİ
+
+Front-End Developer | ABC Teknoloji
+Şubat 2021 - Halen
+
+Web ve mobil uygulamalar için yüksek performanslı arayüzler geliştirme. Takım içinde aktif olarak görev alıp, projelerin zamanında ve kaliteli bir şekilde teslim edilmesini sağlamak.
+
+HTML5, CSS3, JavaScript ve React kullanarak responsive, performans odaklı kullanıcı arayüzleri oluşturmak
+UX/UI prensiplerine uygun tasarımlar geliştirmek
+Web uygulamalarının tarayıcı uyumluluğunu sağlamak ve çeşitli cihazlarda tutarlı performans sağlamak
+RESTful API'ler ile entegrasyon yaparak dinamik ve veri odaklı web uygulamaları oluşturmak
+
+Jnr. Front-End Developer | XYZ Web Solutions
+Eylül 2019 - Şubat 2021
+
+Kullanıcı arayüzlerinin tasarım ve geliştirme sürecine destek olmak. Projelerin teknik altyapısını güçlendirmek.
+
+CSS preprocessors (SASS, LESS) kullanarak stil ve tema geliştirmek
+Vue.js kullanarak interaktif ve dinamik web sayfaları geliştirmek
+Backend geliştiriciler ile iş birliği yaparak API entegrasyonu sağlamak
+EĞİTİM
+
+Lisans
+Bilgisayar Mühendisliği
+Eylül 2014 - Haziran 2019
+Boğaziçi Üniversitesi - Onur Derecesi
+
+YETENEKLER
+Frontend Teknolojileri: HTML5, CSS3, JavaScript, TypeScript
+Frameworkler ve Kütüphaneler: React.js, Vue.js, Angular, Svelte, Tailwind CSS, Bootstrap
+Araçlar ve Teknolojiler: Webpack, Babel, Docker, Figma, Visual Studio Code, Postman
+EK BİLGİLER
+Yabancı Dil: İngilizce (Upper-Intermediate), Fransızca (Intermediate)
+Sertifikalar: AWS Certified Cloud Practitioner, Vue.js Certificate (techcareer.net / 2024)
+Ödüller / Aktiviteler: GitHub açık kaynak projelerine katkı sağlamak, Teknoloji topluluklarında aktif rol almak, junior geliştiricilere veya bootcamp öğrencilerine mentorluk yapmak
